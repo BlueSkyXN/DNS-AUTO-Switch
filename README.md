@@ -3,7 +3,7 @@
 
 ## 关联作品
 
-https://github.com/yxkumad/dns_lb
+https://github.com/yxkumad/dns_lb 【基于该项目仓库修改调整测试，感谢原作者的付出！】
 
 https://github.com/TorchPing/go-torch
 
@@ -21,6 +21,8 @@ https://github.com/lllvcs/huaweicloud_ddns
 
 请阅读博客介绍文档
 
+https://www.blueskyxn.com/202102/4210.html
+
 # 如何安装
 
 我TM，SH单文件脚本而已，还不会？
@@ -30,4 +32,7 @@ https://github.com/lllvcs/huaweicloud_ddns
 不用宝塔还不会的沙雕，别TM不懂装懂行不行，像个小丑
 
 【别忘记装GO-torch，帮你改名go一起塞进仓库了】
+
+
+
 

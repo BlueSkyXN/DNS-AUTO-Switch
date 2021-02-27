@@ -8,9 +8,9 @@ echo "https://github.com/BlueSkyXN/DNS-AUTO-Switch"
 echo "IP+1不好吗：https://www.blueskyxn.com"
 echo "BlueSkyXN：开始读取配置"
 # Ping API
-PING_API=http://IP:8080
+PING_API=http://IP:8080/ping
 echo "BlueSkyXN：Ping·API读取成功"
-#使用https://github.com/TorchPing/go-torch 自行搭建测试API 默认监听端口为8080 你也可以用域名反代
+#使用https://github.com/TorchPing/go-torch 自行搭建测试API 默认监听端口为8080 你也可以用域名反代 记得有/ping
 
 # Original IP 常规IP
 ORG_IP=1.1.1.1
@@ -93,7 +93,7 @@ else
 fi
 
 # Check service failure
-CHECK=$(curl -s "$PING_API/ping/$ORG_IP/22")
+CHECK=$(curl -s "$PING_API/$ORG_IP/22")
 
 if [ "$(echo $CHECK | grep "\"status\":true")" != "" ]; then
   if [ "$ORG_IP" = "$OLD_PRESENT_IP" ]; then

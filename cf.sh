@@ -93,7 +93,7 @@ else
 fi
 
 # Check service failure
-CHECK=$(curl -s "$PING_API/$ORG_IP/22")
+CHECK=$(curl -s "$PING_API/ping/$ORG_IP/22")
 
 if [ "$(echo $CHECK | grep "\"status\":true")" != "" ]; then
   if [ "$ORG_IP" = "$OLD_PRESENT_IP" ]; then

@@ -3,7 +3,7 @@
 
 ## 关联作品
 
-https://github.com/yxkumad/dns_lb 【基于该项目仓库修改调整测试，感谢原作者的付出！】
+https://github.com/yxkumad/dns_lb
 
 https://github.com/TorchPing/go-torch
 

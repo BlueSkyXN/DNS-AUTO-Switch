@@ -1,5 +1,8 @@
 # DNS-AUTO-Switch
+
 自动检测服务器故障，并自动使用API修改并切换DNS解析，支持华为云DNS和CloudFlareDNS
+
+Automatically detect server failures, and automatically use API to modify and switch DNS resolution, support Huawei Cloud DNS and CloudFlareDNS
 
 ## 关联作品
 

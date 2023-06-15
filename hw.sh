@@ -7,6 +7,11 @@ set -o pipefail
 echo "https://github.com/BlueSkyXN/DNS-AUTO-Switch"
 echo "IP+1不好吗：https://www.blueskyxn.com"
 echo "BlueSkyXN：开始读取配置"
+
+# tcping测试选项，1为使用本机进行tcping 测试，nc命令各大发行版都有预装
+$local_check=1
+
+
 # Ping API
 PING_API=http://IP:8080/ping
 echo "BlueSkyXN：Ping·API读取成功"
@@ -93,7 +98,15 @@ else
 fi
 
 # Check service failure
-CHECK=$(curl -s "$PING_API/$ORG_IP/22")
+if [ "$local_check" = 1]; then
+  if [ "$(nc -z -v -w5 $ORG_IP 22 | grep 'succeeded')" !=""]; then
+    CHECK="{"status":true}"
+  else
+    CHECK="{"status":false}"
+  fi
+else
+  CHECK=$(curl -s "$PING_API/$ORG_IP/22")
+fi
 
 if [ "$(echo $CHECK | grep "\"status\":true")" != "" ]; then
   if [ "$ORG_IP" = "$OLD_PRESENT_IP" ]; then
